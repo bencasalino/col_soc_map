@@ -47,3 +47,83 @@ h4 {
     margin-bottom: 3px;
     padding-bottom: 5px;
 }
+
+#day {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    vertical-align: top;
+    color: white;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+
+/* table */
+
+div.week_view {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    border-collapse: collapse;
+    background: white;
+    ;
+}
+
+.divTable.week_view .divTableCell,
+.divTable.week_view .divTableHead {
+    /* border: 1px solid #AAAAAA; */
+    padding: 3px 3px;
+}
+
+.divTable.week_view .divTableBody .divTableCell {
+    font-size: 13px;
+}
+
+
+/* .divTable.week_view .divTableRow:nth-child(even) {
+    background: #D0E4F5;
+} */
+
+.divTable.week_view .divTableHeading {
+    background: #071A26;
+}
+
+.divTable.week_view .divTableHeading .divTableHead {
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+
+/* DivTable.com */
+
+.divTable {
+    display: table;
+}
+
+.divTableRow {
+    display: table-row;
+}
+
+.divTableHeading {
+    display: table-header-group;
+}
+
+.divTableCell,
+.divTableHead {
+    display: table-cell;
+}
+
+.divTableHeading {
+    display: table-header-group;
+}
+
+.divTableFoot {
+    display: table-footer-group;
+}
+
+.divTableBody {
+    display: table-row-group;
+}

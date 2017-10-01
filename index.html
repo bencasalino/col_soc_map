@@ -31,48 +31,127 @@
 
 
 
+        <div class="divTable week_view">
+            <div class="divTableHeading">
+                <div class="divTableRow">
+                    <div class="divTableHead">MON</div>
+                    <div class="divTableHead">TUE</div>
+                    <div class="divTableHead">WED</div>
+                    <div class="divTableHead">THUR</div>
+                    <div class="divTableHead">FRI</div>
+                    <div class="divTableHead">SAT</div>
+                    <div class="divTableHead">SUN</div>
+                </div>
+            </div>
+            <div class="divTableBody">
+                <div class="divTableRow">
+                    <div class="divTableCell">Congress Park<br> 6-8pm
+                        <br> 4 Players going.
+                        <br> No lights past 8pm
+                    </div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                    <div class="divTableCell"></div>
+                </div>
+            </div>
+
+
+
+
+            <div id="directory">
+
+                <table style="border-color: red; background-color: blue;" border="2" cellspacing="2" cellpadding="2">
+                    <tbody>
+                        <tr>
+                            <th>DENVER</th>
+                            <th>BOULDER</th>
+                            <th>FT. COLLINS / NO CO</th>
+                            <th>COLORADO SPRINGS</th>
+                            <th> EASTERNO CO</th>
+                            <th>HIGH ROCKIES</th>
+                            <th>WEST SLOPE</th>
+                            <th>OTHER</th>
+                        </tr>
+                        <tr>
+                            <td>AURORA</td>
+                            <td>LAKEWOOD</td>
+                        </tr>
+                    </tbody>
+                    Colorado Springs city 416,427 Aurora city 325,078 Fort Collins city 143,986 Lakewood city 142,980 Thornton city 118,772 Pueblo city 106,595 Arvada city 106,433 Westminster city 106,114 Centennial city 100,377 Boulder city 97,385 Greeley city 92,889 Longmont
+                    city 86,270 Loveland city 66,859 Grand Junction city 58,566 Broomfield city 55,889 Castle Rock town 48,231 Commerce City city 45,913 Parker town 45,297 Littleton city 41,737 Northglenn city 35,789 Brighton city 33,352 Englewood city
+                    30,255 Wheat Ridge city 30,166 Fountain city 25,846 Lafayette city 24,453 Montrose city 19,132 Golden city 18,867 Windsor town 18,644 Evans city 18,537 Louisville city 18,376
+            </div>
 
 
 
 
 
 
+            <script type="text/javascript">
+                var locations = [
+                    ['Bondi Beach', -33.890542, 151.274856, 4],
+                    ['Coogee Beach', -33.923036, 151.259052, 5],
+                    ['Cronulla Beach', -34.028249, 151.157507, 3],
+                    ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+                    ['Maroubra Beach', 41, -106, 1]
+                ];
 
-        <script type="text/javascript">
-            var locations = [
-                ['Bondi Beach', -33.890542, 151.274856, 4],
-                ['Coogee Beach', -33.923036, 151.259052, 5],
-                ['Cronulla Beach', -34.028249, 151.157507, 3],
-                ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-                ['Maroubra Beach', 41, -106, 1]
-            ];
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: new google.maps.LatLng(39.75, -105),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-
-            var infowindow = new google.maps.InfoWindow();
-
-            var marker, i;
-
-            for (i = 0; i < locations.length; i++) {
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                    map: map
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 10,
+                    center: new google.maps.LatLng(39.75, -105),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
                 });
 
-                google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                    return function() {
-                        infowindow.setContent(locations[i][0]);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, i));
-            }
-        </script>
+                var infowindow = new google.maps.InfoWindow();
 
-    </div>
+                var marker, i;
+
+                for (i = 0; i < locations.length; i++) {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                        map: map
+                    });
+
+                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                        return function() {
+                            infowindow.setContent(locations[i][0]);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+            </script>
+
+        </div>
 </body>
 
 </html>
