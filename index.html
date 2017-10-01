@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Google Maps Multiple Markers</title>
+    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+</head>
+
+<body>
+    <h6>Search for a field:</h6>
+    <form action="#">
+        <input type="text">
+        <input type="submit">
+    </form>
+    <h6>Add a game:</h6>
+    <form action="#">
+        <input type="text" name="title" value="">
+        <input type="text" name="start" value="">
+
+        <input type="text" name="finish" value="">
+
+
+
+        <input type="submit">
+    </form>
+    <div class="test">
+
+        <div id="map" style="height: 300px; width: 100%;">
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+            var locations = [
+                ['Bondi Beach', -33.890542, 151.274856, 4],
+                ['Coogee Beach', -33.923036, 151.259052, 5],
+                ['Cronulla Beach', -34.028249, 151.157507, 3],
+                ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+                ['Maroubra Beach', 41, -106, 1]
+            ];
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: new google.maps.LatLng(40, -105),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+
+            var marker, i;
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map
+                });
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+        </script>
+    </div>
+</body>
+
+</html>
