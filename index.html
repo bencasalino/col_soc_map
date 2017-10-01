@@ -12,11 +12,15 @@
         <h4>COLORADO PICKUP SOCCER</h4>
     </div>
     <div class="map-header">
-        <p class="hmm">Submit a Game:</p>
+        <p class="submit">Submit a Game:</p>
         <input id='location' type='text' placeholder="Location" name='location' />
         <input id="date" type="date">
         <input id="time" type="time">
-        <input id='location' type='text' placeholder="Notes" name='notes' />
+        <input id='notes' type='text' placeholder="Notes" name='notes' />
+
+        <button class="full" href="#">FULL FEILD DIRECTORY</button>
+
+        <button class="create_game" href="#">SUMBIT</button>
     </div>
 
 
@@ -44,8 +48,8 @@
             ];
 
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 8,
-                center: new google.maps.LatLng(40, -105),
+                zoom: 10,
+                center: new google.maps.LatLng(39.75, -105),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
 

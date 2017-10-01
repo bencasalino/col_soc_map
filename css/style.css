@@ -15,3 +15,35 @@ h4 {
     /* margin: auto; */
     text-align: center;
 }
+
+.submit {
+    margin-bottom: -3px;
+}
+
+.full {
+    float: right;
+}
+
+.map-header {
+    padding: 4px;
+}
+
+#location {
+    /* margin-bottom: 1px; */
+    padding-bottom: 5px;
+}
+
+#date {
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+}
+
+#time {
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+}
+
+#notes {
+    margin-bottom: 3px;
+    padding-bottom: 5px;
+}
