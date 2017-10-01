@@ -1,33 +1,26 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <title>Google Maps Multiple Markers</title>
+
+
+    <!-- maps -->
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 </head>
 
 <body>
-    <h6>Search for a field:</h6>
-    <form action="#">
-        <input type="text">
-        <input type="submit">
-    </form>
-    <h6>Add a game:</h6>
-    <form action="#">
-        <input type="text" name="title" value="">
-        <input type="text" name="start" value="">
-
-        <input type="text" name="finish" value="">
+    <input id='location' type='text' placeholder="Location" name='location' />
 
 
 
-        <input type="submit">
-    </form>
+    <input id="date" type="date">
+    <input id="time" type="time">
+
+
+
     <div class="test">
 
         <div id="map" style="height: 300px; width: 100%;">
         </div>
-
 
 
 
@@ -71,6 +64,7 @@
                 })(marker, i));
             }
         </script>
+
     </div>
 </body>
 
